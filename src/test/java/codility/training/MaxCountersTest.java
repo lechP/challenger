@@ -47,4 +47,15 @@ public class MaxCountersTest {
         Assertions.assertThat(result).isEqualTo(new int[]{1,1,1,1,1});
     }
 
+    @Test
+    public void mixedIncreases() throws Exception {
+        //given
+        int N = 5;
+        int[] A = new int[]{1,6,1,6,5};
+        //when
+        int[] result = maxCounters.solution(N,A);
+        //then
+        Assertions.assertThat(result).isEqualTo(new int[]{2,2,2,2,3});
+    }
+
 }

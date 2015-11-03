@@ -12,13 +12,17 @@ public class MaxCounters {
 
         int localMax =0;
         int globalMax = 0;
+        int lastGlobal = -1;
 
         for (int i = 0; i < A.length; i++) {
             if(A[i] > N){
                 globalMax += localMax;
                 localMax = 0;
-                result = new int[N];
+                lastGlobal = i;
             } else {
+                if(lastGlobal + 1 == i) {
+                    result = new int[N];
+                }
                 result[A[i] - 1]++;
                 if (localMax < result[A[i] - 1]) {
                     localMax = result[A[i] - 1];
