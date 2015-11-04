@@ -1,6 +1,6 @@
 package codility.training;
 
-/** created by LPI */
+/** created by LPI and JSI paralelly ;-) */
 public class Nesting {
 
     public int solution(String S){
