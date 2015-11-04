@@ -5,11 +5,6 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-/**
- * TODO LPI comment me
- *
- * @author Lech Piechota, Capgemini
- */
 public class MaxCountersTest {
 
     private MaxCounters maxCounters = new MaxCounters();
