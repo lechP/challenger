@@ -21,4 +21,14 @@ public class FrogTest {
         //then
         Assertions.assertThat(result).isEqualTo(3);
     }
+
+    @Test
+    public void anotherCodilityTest() throws Exception {
+        //given
+        int[] A = {0,0,0};
+        //when
+        int result = frog.solution(A);
+        //then
+        Assertions.assertThat(result).isEqualTo(-1);
+    }
 }
