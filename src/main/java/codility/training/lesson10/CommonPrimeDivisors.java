@@ -14,29 +14,21 @@ public class CommonPrimeDivisors {
     }
 
     private boolean haveSamePrimeDivisors(int a, int b) {
-        if(a==b) return true;
-
         int gcdAB = gcd(a, b);
-        if (gcdAB > 1) {
-            int remainderA = a / gcdAB;
-            int remainderB = b / gcdAB;
-
-            if (hasNoOtherFactors(remainderA, gcdAB) && hasNoOtherFactors(remainderB, gcdAB)) {
-                return true;
-            }
-        }
-        return false;
+        return hasNoOtherFactors(a, gcdAB) && hasNoOtherFactors(b, gcdAB);
     }
 
-    private boolean hasNoOtherFactors(int remainder, int dividor) {
-        while (dividor < remainder) {
-            if(remainder % dividor != 0) return false;
-            remainder /= dividor;
+    private boolean hasNoOtherFactors(int value, int dividor) {
+        int remainder = value / dividor;
+        while (remainder > 1) {
+            int gcd = gcd(remainder, dividor);
+            if(gcd == 1) return false;
+            remainder /= gcd;
         }
-        return gcd(remainder, dividor) == remainder;
+        return true;
     }
 
-    protected int gcd(int a, int b) {
+    private int gcd(int a, int b) {
         if (a % b == 0) {
             return b;
         }
