@@ -2,8 +2,6 @@ package codility.training.lesson10;
 
 import org.junit.Test;
 
-import java.util.Set;
-
 import static org.assertj.core.api.Assertions.assertThat;
 
 /**
@@ -13,49 +11,6 @@ public class CommonPrimeDivisorsTest {
 
     CommonPrimeDivisors sut = new CommonPrimeDivisors();
 
-    @Test
-    public void shouldPrepareProperArrayOfFirstPrimeFactors() throws Exception {
-        //given
-        int n = 19;
-        //when
-        int[] result = sut.prepareFactors(n);
-        //then
-        int[] firstFactorsFrom0To19 = new int[]{0, 0, 0, 0, 2, 0, 2, 0, 2, 3, 2, 0, 2, 0, 2, 3, 2, 0, 2, 0};
-        assertThat(result).isEqualTo(firstFactorsFrom0To19);
-    }
-
-    @Test
-    public void testGetPrimeFactors() throws Exception {
-        //given
-        int[] preparedFactors = {0, 0, 0, 0, 2, 0, 2};
-        int k = 6;
-        //when
-        Set<Integer> primeFactors = sut.getDistinctPrimeFactors(k, preparedFactors);
-        //then
-        assertThat(primeFactors).hasSize(2).contains(2).contains(3);
-    }
-
-    @Test
-     public void testGetPrimeFactorsCodility() throws Exception {
-        //given
-        int[] preparedFactors = {0, 0, 0, 0, 2, 0, 2};
-        int k = 4;
-        //when
-        Set<Integer> primeFactors = sut.getDistinctPrimeFactors(k, preparedFactors);
-        //then
-        assertThat(primeFactors).hasSize(1).contains(2);
-    }
-
-    @Test
-    public void testGetPrimeFactorsFor1() throws Exception {
-        //given
-        int[] preparedFactors = {0, 0, 0, 0, 2, 0, 2};
-        int k = 1;
-        //when
-        Set<Integer> primeFactors = sut.getDistinctPrimeFactors(k, preparedFactors);
-        //then
-        assertThat(primeFactors).isEmpty();
-    }
 
     @Test
     public void gcdForTwoRelativelyPrimeNumbers() {
@@ -91,15 +46,95 @@ public class CommonPrimeDivisorsTest {
     }
 
     @Test
-    public void findMaxOfTwoArrays() {
+    public void codilityTestPart1() {
         //given
-        int [] A = {1, 17, 4, 3, 11, 2};
-        int [] B = {7, 10, 15, -3};
+        int [] A = {15};
+        int [] B = {75};
         //when
-        int result = sut.getMaxValue(A, B);
+        int result = sut.solution(A, B);
         //then
-        assertThat(result).isEqualTo(17);
+        assertThat(result).isEqualTo(1);
     }
 
+    @Test
+    public void codilityTestPart2() {
+        //given
+        int [] A = {10};
+        int [] B = {30};
+        //when
+        int result = sut.solution(A, B);
+        //then
+        assertThat(result).isEqualTo(0);
+    }
+
+    @Test
+    public void codilityTestPart3() {
+        //given
+        int [] A = {3};
+        int [] B = {5};
+        //when
+        int result = sut.solution(A, B);
+        //then
+        assertThat(result).isEqualTo(0);
+    }
+
+    @Test
+         public void testWithOneNumberBeingThePowerOfAnother() {
+        //given
+        int [] A = {125};
+        int [] B = {5};
+        //when
+        int result = sut.solution(A, B);
+        //then
+        assertThat(result).isEqualTo(1);
+    }
+
+    @Test
+    public void testWithOneNumberBeingBigMultiplicationOfAnother() {
+        //given
+        int[] A = {250};
+        int[] B = {5};
+        //when
+        int result = sut.solution(A, B);
+        //then
+        assertThat(result).isEqualTo(0);
+    }
+
+    @Test
+    public void testWithOneNumberBeingBigMultiplicationOfAnother2() {
+        //given
+        int[] A = {90};
+        int[] B = {5};
+        //when
+        int result = sut.solution(A, B);
+        //then
+        assertThat(result).isEqualTo(0);
+    }
+
+
+    @Test
+    public void testWithOnes() {
+        //given
+        int [] A = {1};
+        int [] B = {1};
+        //when
+        int result = sut.solution(A, B);
+        //then
+        assertThat(result).isEqualTo(1);
+    }
+
+    @Test
+    public void codility1to70simulationTest(){
+
+        for(int i=1; i<=70; i++){
+            for(int j=1; j<=70; j++){
+                int result = sut.solution(new int[]{i},new int[]{j});
+                if(result==1){
+                    System.out.println(i + " " + j);
+                }
+            }
+        }
+
+    }
 
 }
