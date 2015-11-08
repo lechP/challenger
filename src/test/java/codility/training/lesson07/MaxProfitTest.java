@@ -1,16 +1,15 @@
-package codility.training.lesson7maxslice;
+package codility.training.lesson07;
 
 import org.junit.Test;
 
-import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.Assert.*;
+import static org.assertj.core.api.Assertions.*;
 
 /**
- * Created by jsi on 2015-11-06.
+ * Created by LPI on 06.11.2015
  */
-public class AnotherMaxProfitTest {
+public class MaxProfitTest {
 
-    private AnotherMaxProfit sut = new AnotherMaxProfit();
+    private MaxProfit sut = new MaxProfit();
 
     @Test
     public void codilityExampleTest() throws Exception {
@@ -51,4 +50,5 @@ public class AnotherMaxProfitTest {
         //then
         assertThat(result).isEqualTo(10301 - 9600);
     }
+
 }

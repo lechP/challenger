@@ -1,9 +1,7 @@
-package codility.training.lesson8;
+package codility.training.lesson08;
 
 import org.assertj.core.api.Assertions;
 import org.junit.Test;
-
-import static org.junit.Assert.*;
 
 /**
  * Created by jsi on 2015-11-06.

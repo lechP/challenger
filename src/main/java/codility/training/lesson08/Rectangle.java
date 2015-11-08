@@ -1,4 +1,4 @@
-package codility.training.lesson8;
+package codility.training.lesson08;
 
 /**
  * Created by jsi on 2015-11-06.

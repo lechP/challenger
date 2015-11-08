@@ -1,4 +1,4 @@
-package codility.training.lesson8;
+package codility.training.lesson08;
 
 /**
  * https://codility.com/demo/results/trainingU9E4N8-GJV/

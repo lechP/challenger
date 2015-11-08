@@ -1,15 +1,12 @@
-package codility.training.lesson7maxslice;
+package codility.training.lesson07;
 
 import org.junit.Test;
 
-import static org.assertj.core.api.Assertions.*;
+import static org.assertj.core.api.Assertions.assertThat;
 
-/**
- * Created by LPI on 06.11.2015
- */
-public class MaximumSliceWithNegativesTest {
+public class BasicMaximumSliceTest {
 
-    private MaximumSliceWithNegatives sut = new MaximumSliceWithNegatives();
+    private BasicMaximumSlice sut = new BasicMaximumSlice();
 
     @Test
     public void codilityExampleTest() throws Exception {
@@ -22,23 +19,23 @@ public class MaximumSliceWithNegativesTest {
     }
 
     @Test
+    public void emptyArray() throws Exception {
+        //given
+        int[] A = {};
+        //when
+        int result = sut.solution(A);
+        //then
+        assertThat(result).isEqualTo(0);
+    }
+
+    @Test
     public void oneNegativeElement() throws Exception {
         //given
         int[] A = {-256};
         //when
         int result = sut.solution(A);
         //then
-        assertThat(result).isEqualTo(-256);
-    }
-
-    @Test
-    public void manyNegativeElements() throws Exception {
-        //given
-        int[] A = {-256, -10, -44, -1, -100, -321};
-        //when
-        int result = sut.solution(A);
-        //then
-        assertThat(result).isEqualTo(-1);
+        assertThat(result).isEqualTo(0);
     }
 
     @Test
@@ -60,5 +57,7 @@ public class MaximumSliceWithNegativesTest {
         //then
         assertThat(result).isEqualTo(312 + 16 - 5 - 10 + 44);
     }
+
+
 
 }

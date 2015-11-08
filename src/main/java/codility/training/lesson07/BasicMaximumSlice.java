@@ -1,4 +1,4 @@
-package codility.training.lesson7maxslice;
+package codility.training.lesson07;
 
 
 public class BasicMaximumSlice {

@@ -1,4 +1,4 @@
-package codility.training.lesson7maxslice;
+package codility.training.lesson07;
 
 /**
  * Created by jsi on 2015-11-06.
