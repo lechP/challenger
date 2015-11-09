@@ -17,50 +17,6 @@ public class FibFrogTest {
     private FibFrog fibFrog = new FibFrog();
 
     @Test
-    public void shouldReturnAllPossibleJumpPositionsForTheBankPosition() {
-        //given
-        int bankPosition = -1;
-        int[] leaves = {1, 0, 0, 1, 1, 0, 0, 1, 1, 0, 1, 1};
-        //when
-        List<Integer> result = fibFrog.getPossibleJumpPositions(leaves, bankPosition);
-        //then
-        assertThat(result).isEqualTo(Arrays.asList(12, 7, 4, 0));
-    }
-
-    @Test
-    public void shouldReturnAllPossibleJumpPositionsForThePositionInTheMiddleOfTheRiver() {
-        //given
-        int currPosition = 4;
-        int[] leaves = {1, 0, 0, 1, 1, 0, 0, 1, 1, 1, 1, 1};
-        //when
-        List<Integer> result = fibFrog.getPossibleJumpPositions(leaves, currPosition);
-        //then
-        assertThat(result).isEqualTo(Arrays.asList(12, 9, 7));
-    }
-
-    @Test
-    public void shouldReturnEmptyListForOnlyZerosAndNnotBeingFib() {
-        //given
-        int bankPosition = -1;
-        int[] leaves = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
-        //when
-        List<Integer> result = fibFrog.getPossibleJumpPositions(leaves, bankPosition);
-        //then
-        assertThat(result).isEqualTo(new LinkedList<>());
-    }
-
-    @Test
-    public void shouldReturnNforOnlyZerosAndNbeingFib() {
-        //given
-        int bankPosition = -1;
-        int[] leaves = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
-        //when
-        List<Integer> result = fibFrog.getPossibleJumpPositions(leaves, bankPosition);
-        //then
-        assertThat(result).isEqualTo(Collections.singletonList(12));
-    }
-
-    @Test
     public void shouldReturnOneWhenFrogCanImmediatelyJumpToTheEnd() {
         //given
         int[] leaves = {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1};
