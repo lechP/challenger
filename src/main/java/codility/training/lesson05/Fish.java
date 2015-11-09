@@ -1,4 +1,4 @@
-package codility.training;
+package codility.training.lesson05;
 
 import java.util.Stack;
 

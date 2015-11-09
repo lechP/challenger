@@ -1,4 +1,4 @@
-package codility.training;
+package codility.training.lesson01;
 
 import org.junit.Test;
 
@@ -20,7 +20,7 @@ public class FrogTest {
     }
 
     @Test
-     public void shouldReturnMinusOneWhenOneLeafIsMissing() throws Exception {
+    public void shouldReturnMinusOneWhenOneLeafIsMissing() throws Exception {
         //given
         int X = 5;
         int[] A = new int[]{1, 3, 1, 4, 1, 3, 5, 4};

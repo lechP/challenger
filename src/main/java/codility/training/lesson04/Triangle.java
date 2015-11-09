@@ -1,4 +1,4 @@
-package codility.training;
+package codility.training.lesson04;
 
 import java.util.Arrays;
 

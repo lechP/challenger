@@ -1,4 +1,4 @@
-package codility.training;
+package codility.training.lesson06;
 
 import org.assertj.core.api.Assertions;
 import org.junit.Test;

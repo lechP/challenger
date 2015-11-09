@@ -1,4 +1,4 @@
-package codility.training;
+package codility.training.lesson01;
 
 
 public class Frog {

@@ -1,4 +1,4 @@
-package codility.training;
+package codility.training.lesson05;
 
 /** created by LPI and JSI paralelly ;-) */
 public class Nesting {

@@ -1,4 +1,4 @@
-package codility.training;
+package codility.training.lesson02;
 
 public class MaxCounters {
 

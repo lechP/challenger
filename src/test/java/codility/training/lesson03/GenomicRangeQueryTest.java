@@ -1,4 +1,4 @@
-package codility.training;
+package codility.training.lesson03;
 
 import org.junit.Test;
 
@@ -74,7 +74,7 @@ public class GenomicRangeQueryTest {
         //given
         String genome = "TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT";
         int[] P = new int[]{4, 9, 0};
-        int[] Q = new int[]{6, 15, genome.length()-1};
+        int[] Q = new int[]{6, 15, genome.length() - 1};
         //when
         int[] result = sut.solution(genome, P, Q);
         //then
