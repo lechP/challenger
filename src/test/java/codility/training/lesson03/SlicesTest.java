@@ -1,11 +1,10 @@
 package codility.training.lesson03;
 
-import junit.framework.TestCase;
 import org.assertj.core.api.Assertions;
 import org.junit.Test;
 
 /**
- * Created by jsi on 2015-11-04.
+ * Created by jsi on 2015-11-04
  */
 public class SlicesTest {
 
