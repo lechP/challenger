@@ -10,24 +10,26 @@ public class AbsDistinct {
         int distinctCounter = 0;
         while (nextIsNegative(A, negativeIdx)) {
             negativeIdx++;
-            if (negativeIdx == 0 || A[negativeIdx] != A[negativeIdx - 1])
-                distinctCounter++;
+            if (isFirstOrIncreased(negativeIdx, A)) distinctCounter++;
         }
 
         int positiveIdx = negativeIdx + 1;
         while (positiveIdx < A.length) {
             if (negativeIdx == -1) {
-                if (positiveIdx == 0 || A[positiveIdx] > A[positiveIdx - 1]) distinctCounter++;
-                positiveIdx++;
+                if (isFirstOrIncreased(positiveIdx, A)) distinctCounter++;
             } else {
                 while (negativeIdx > -1 && A[positiveIdx] > Math.abs(A[negativeIdx])) negativeIdx--;
                 if ((negativeIdx == -1 || A[positiveIdx] < Math.abs(A[negativeIdx])) && A[positiveIdx] > A[positiveIdx - 1])
                     distinctCounter++;
-                positiveIdx++;
             }
+            positiveIdx++;
         }
 
         return distinctCounter;
+    }
+
+    private boolean isFirstOrIncreased(int negativeIdx, int[] A) {
+        return negativeIdx == 0 || A[negativeIdx] > A[negativeIdx - 1];
     }
 
     private boolean nextIsNegative(int[] A, int indexOfNegative) {
